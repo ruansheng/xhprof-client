@@ -13,3 +13,14 @@ use xhprof-client collect xhprof data
 
 # composer install
 ```
+
+### use
+```
+use Xhprof\Client\Client;
+
+$client = new Client(0, 0);
+$client->setProjectId('huzhu');
+$client->setRedisAddres();
+$client->setRedisKeyInfo('xhprof-data');
+$client->collection();
+```
