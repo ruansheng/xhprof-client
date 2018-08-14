@@ -88,6 +88,9 @@ class Client{
                 if(!$redis->connect($this->host, $this->port)) {
                     return false;
                 }
+                if($this->password) {
+                    $redis->auth($this->password);
+                }
                 if($this->key_type == 'list') {
                     $redis->rPush($this->redis_key, json_encode($data));
                 } else {
