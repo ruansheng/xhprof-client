@@ -70,10 +70,16 @@ class Client{
         return true;
     }
 
+    /**
+     * startCollect
+     */
     private function startCollect() {
         xhprof_enable(XHPROF_FLAGS_MEMORY | XHPROF_FLAGS_CPU | XHPROF_FLAGS_NO_BUILTINS);
     }
 
+    /**
+     * endCollect
+     */
     private function endCollect() {
         register_shutdown_function(function() {
             $data = $this->getDumpData();
