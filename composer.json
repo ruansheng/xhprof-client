@@ -1,0 +1,17 @@
+{
+    "name": "ruansheng/xhprof-client",
+    "authors": [
+        {
+            "name": "阮胜",
+            "email": "ruansheng@qingsongchou.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xhprof\\Client\\": "src/Xhprof/Client"
+        }
+    }
+}
