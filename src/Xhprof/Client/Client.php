@@ -78,14 +78,18 @@ class Client{
         register_shutdown_function(function() {
             $data = $this->getDumpData();
 
-            $redis = new \Redis();
-            if(!$redis->connect($this->host, $this->port)) {
+            try{
+                $redis = new Redis();
+                if(!$redis->connect($this->host, $this->port)) {
+                    return false;
+                }
+                if($this->key_type == 'list') {
+                    $redis->rPush($this->redis_key, json_encode($data));
+                } else {
+                    $redis->publish($this->redis_key, json_encode($data));
+                }
+            } catch(Exception $e) {
                 return false;
-            }
-            if($this->key_type == 'list') {
-                $redis->rPush($this->redis_key, json_encode($data));
-            } else {
-                $redis->publish($this->redis_key, json_encode($data));
             }
             return true;
         });
