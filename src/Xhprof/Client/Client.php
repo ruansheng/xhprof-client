@@ -84,7 +84,7 @@ class Client{
             $data = $this->getDumpData();
 
             try{
-                $redis = new Redis();
+                $redis = new \Redis();
                 if(!$redis->connect($this->host, $this->port)) {
                     return false;
                 }
@@ -96,7 +96,7 @@ class Client{
                 } else {
                     $redis->publish($this->redis_key, json_encode($data));
                 }
-            } catch(Exception $e) {
+            } catch(\Exception $e) {
                 return false;
             }
             return true;
