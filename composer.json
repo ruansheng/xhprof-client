@@ -1,5 +1,8 @@
 {
     "name": "ruansheng/xhprof-client",
+    "description": "collect xhprof data",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "阮胜",
