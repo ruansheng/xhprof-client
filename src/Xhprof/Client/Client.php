@@ -162,6 +162,12 @@ class Client{
             return 1;
         } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
             return 2;
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+            return 4;
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+            return 5;
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            return 6;
         } else {
             return 0;
         }
