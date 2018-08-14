@@ -18,7 +18,8 @@ use xhprof-client collect xhprof data
 ```
 use Xhprof\Client\Client;
 
-$client = new Client(0, 0);
+$client = new Client();
+$client->setCollectRate();
 $client->setProjectId('huzhu');
 $client->setRedisAddres();
 $client->setRedisKeyInfo('xhprof-data');

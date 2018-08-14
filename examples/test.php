@@ -4,7 +4,8 @@ include_once $file;
 
 use Xhprof\Client\Client;
 
-$client = new Client(0, 0);
+$client = new Client();
+$client->setCollectRate();
 $client->setProjectId('huzhu');
 $client->setRedisAddres();
 $client->setRedisKeyInfo('xhprof-data');

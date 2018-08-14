@@ -16,12 +16,11 @@ class Client{
     private $redis_key;
 
     /**
-     * Client constructor.
      * default: 1/1000 rate
      * @param int $denominator
      * @param int $numerator
      */
-    public function __construct($denominator = 1000, $numerator = 1) {
+    public function setCollectRate($denominator = 1000, $numerator = 1) {
         // set collect rate
         $this->denominator = $denominator;
         $this->numerator = $numerator;
