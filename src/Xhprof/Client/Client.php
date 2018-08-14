@@ -142,7 +142,7 @@ class Client{
             'url' => $uri,                     // request uri
             'ip' => $remote_addr,              // client ip
             'req_time' => $time,               // request time
-            'project_id' => $this->pid,        // project id
+            'project_id' => $this->project_id, // project id
             'metadata' => $xhprof_data         // xhprof date
         ];
         return $data;
