@@ -61,8 +61,7 @@ class Client{
             return false;
         }
 
-        $num = mt_rand(0, $this->denominator);
-        if($num == $this->numerator) {
+        if(($this->denominator == $this->numerator) || (mt_rand(0, $this->denominator) == $this->numerator)) {
             $this->startCollect();
             $this->endCollect();
         }
